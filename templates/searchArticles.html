@@ -1,0 +1,28 @@
+<html>
+<body>
+<h1> Search for an article </h1>
+
+<form action="{{url_for('searchArticle')}}" method = 'POST'>
+
+<p>Title:</p>
+<input type='text' size='30' name='title'>
+<br>
+<p>Authors: (Enter multiple authors by separating with semicolon)</p>
+<input type='text' size='30' name='authors'>
+<br>
+<p>Journal</p>
+<input type='text' size='30' name='journal'>
+<br>
+<p>Year (Lower limit)</p>
+<input type='text' size='30' name='yearlo'>
+<br>
+<p>Year (Upper limit)</p>
+<input type='text' size='30' name='yearhi'>
+<br>
+<br>
+<input type='submit' value='Search'>
+
+</form>
+
+</body>
+</html>

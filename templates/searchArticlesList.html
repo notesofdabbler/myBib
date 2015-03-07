@@ -1,0 +1,12 @@
+<html>
+<body>
+<h1> Search Results</h1>
+{% for i in items %}
+<div>
+<p>{{i.title}}</p>
+<p>{{i.authors}}</p>
+<p> {{i.journal}},{{i.volume}},{{i.pages}},{{i.year}} </p>
+</div>
+{% endfor %}
+</body>
+</html>

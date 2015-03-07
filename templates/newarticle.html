@@ -1,0 +1,31 @@
+<html>
+<body>
+<h1> Input New Article into myBib </h1>
+
+<form action="{{url_for('newArticle')}}" method = 'POST'>
+
+<p>Title:</p>
+<input type='text' size='30' name='title'>
+<br>
+<p>Authors: (Enter multiple authors by separating with semicolon)</p>
+<input type='text' size='30' name='authors'>
+<br>
+<p>Journal</p>
+<input type='text' size='30' name='journal'>
+<br>
+<p>Volume</p>
+<input type='text' size='30' name='volume'>
+<br>
+<p>Year</p>
+<input type='text' size='30' name='year'>
+<br>
+<p>Pages</p>
+<input type='text' size='30' name='pages'>
+<br>
+<br>
+<input type='submit' value='Add to myBib'>
+
+</form>
+
+</body>
+</html>
