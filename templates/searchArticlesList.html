@@ -6,7 +6,13 @@
 <p>{{i.title}}</p>
 <p>{{i.authors}}</p>
 <p> {{i.journal}},{{i.volume}},{{i.pages}},{{i.year}} </p>
+<a href='{{i.weburl}}'> Web url </a> &nbsp&nbsp
+<a href='{{i.localurl}}'>Local url</a>
+<p> {{i.keywords}} </p>
 </div>
+<a href='/article/edit/{{i.id}}'>Edit</a>
+<br>
+<a href='/article/delete/{{i.id}}'>Delete</a>    
 {% endfor %}
 </body>
 </html>

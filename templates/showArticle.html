@@ -1,0 +1,16 @@
+<html>
+<body>
+<h1> Edited Information</h1>
+<div>
+<p>{{item.title}}</p>
+<p>{{item.authors}}</p>
+<p> {{item.journal}},{{item.volume}},{{item.pages}},{{item.year}} </p>
+<a href='{{item.weburl}}'> Web url </a> &nbsp&nbsp
+<a href='{{item.localurl}}'>Local url</a>
+<p> {{item.keywords}} </p>
+</div>
+<a href='/article/edit/{{item.id}}'>Edit</a>
+<br>
+<a href='/article/delete/{{item.id}}'>Delete</a>    
+</body>
+</html>

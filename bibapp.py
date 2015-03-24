@@ -27,7 +27,11 @@ def newArticle():
                     journal = request.form['journal'],
                     volume = request.form['volume'],
                     pages = request.form['pages'],
-                    year = request.form['year'])
+                    year = request.form['year'],
+                    weburl = request.form['weburl'],
+                    localurl = request.form['localurl'],
+                    keywords = request.form['keywords']
+                    )
       session.add(article1)
       session.commit()
       return redirect(url_for('newArticle')) 
@@ -85,24 +89,48 @@ def searchArticlesList():
 
     return render_template('searchArticlesList.html',items = items) 
     
-@app.route('/tmp/')
-def Tmp():
-#    global srchtitle,srchauthors,srchjournal,srchyearlo,srchyearhi
-    srchtitle = '%Supply%'
-    srchauthors = '%Maranas%'
-    srchjournal = '%Comp%'
-    srchyearlo = '1990'
-    srchyearhi = '2010'
-    return redirect(url_for('searchArticlesList'))    
+@app.route('/article/edit/<id>', methods = ['GET','POST'])      
+def editArticle(id):
 
-@app.route('/test/<title>', methods = ['GET','POST'])
-def Test(title):
-    qry = session.query(Articles)
-    qry = qry.filter(Articles.authors.like(title))
+    item = session.query(Articles).filter(Articles.id == id).first()
+    print item.id, item.title
  
-    items = qry.all()
+    if request.method == 'POST':
+        if request.form['title']:
+            item.title = request.form['title']
+            
+        if request.form['authors']:
+            item.authors = request.form['authors']
 
-    return render_template('searchArticlesList.html',items = items) 
+        if request.form['journal']:
+            item.journal = request.form['journal']
+
+        if request.form['volume']:
+            item.volume = request.form['volume']
+
+        if request.form['pages']:
+            item.pages = request.form['pages']
+
+        if request.form['year']:
+            item.year = request.form['year']
+
+        if request.form['weburl']:
+            item.weburl = request.form['weburl']
+
+        if request.form['localurl']:
+            item.localurl = request.form['localurl']
+            
+        if request.form['keywords']:
+            item.keywords = request.form['keywords']
+
+        session.add(item)
+        session.commit()
+        
+        return render_template('showArticle.html',item = item)
+    
+    else:
+ 
+        return render_template('editArticle.html',item = item)
          
 if __name__ == '__main__':
     app.debug = True

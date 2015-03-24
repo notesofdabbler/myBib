@@ -1,0 +1,40 @@
+<html>
+<body>
+<h1> Edit the Article Information</h1>
+
+<form action="{{url_for('editArticle',id = item.id)}}" method = 'POST'>
+
+<p>Title:</p>
+<input type='text' size='100' name='title' placeholder = '{{item.title}}'>
+<br>
+<p>Authors: (Enter multiple authors by separating with semicolon)</p>
+<input type='text' size='100' name='authors' placeholder = '{{item.authors}}'>
+<br>
+<p>Journal</p>
+<input type='text' size='100' name='journal' placeholder = '{{item.journal}}'>
+<br>
+<p>Volume</p>
+<input type='text' size='30' name='volume' placeholder = '{{item.volume}}'>
+<br>
+<p>Year</p>
+<input type='text' size='30' name='year' placeholder = '{{item.year}}'>
+<br>
+<p>Pages</p>
+<input type='text' size='30' name='pages' placeholder = '{{item.pages}}'>
+<br>
+<p>Web URL</p>
+<input type='text' size='100' name='weburl' placeholder = '{{item.weburl}}'>
+<br>
+<p>Local URL</p>
+<input type='text' size='100' name='localurl' placeholder = '{{item.localurl}}'>
+<br>
+<p>Keywords: (Enter multiple keywords by separating with semicolon)</p>
+<input type='text' size='100' name='keywords' placeholder = '{{item.keywords}}'>
+<br>
+<br>
+<input type='submit' value='Edit'>
+
+</form>
+
+</body>
+</html>
